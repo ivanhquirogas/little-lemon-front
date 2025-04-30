@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Booking from "./Booking";
+import ConfirmedBooking from "./ConfirmedBooking";
 
 const Main = () => {
   const seedRandom = function (seed) {

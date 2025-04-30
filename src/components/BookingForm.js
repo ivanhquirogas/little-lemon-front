@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
 const BookingForm = (props) => {
-  const { date, setDate } = useState("");
-  const { times, setTimes } = useState("");
-  const { guests, setGuests } = useState("");
-  const { occasion, setOccasion } = useState("");
+  const [date, setDate] = useState("");
+  const [times, setTimes] = useState("");
+  const [guests, setGuests] = useState("");
+  const [occasion, setOccasion] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.SubmitForm(e);
+    props.submitForm(e);
   };
 
   const handleChange = (e) => {
@@ -31,6 +31,7 @@ const BookingForm = (props) => {
               />
             </div>
 
+            {/* Time selection  */}
             <div>
               <label htmlFor="book-time">Choose Time:</label>
               <select
@@ -49,14 +50,15 @@ const BookingForm = (props) => {
               <label htmlFor="book-guests">Number of Guests:</label>
               <input
                 id="book-guests"
-                min={1}
+                min="1"
                 value={guests}
                 onChange={(e) => setGuests(e.target.value)}
               />
             </div>
 
+            {/* Occation field */}
             <div>
-              <label htmlFor="book-occasion">Occsion:</label>
+              <label htmlFor="book-occasion">Occasion:</label>
               <select
                 id="book-occasion"
                 key={occasion}
@@ -72,7 +74,7 @@ const BookingForm = (props) => {
               <input
                 aria-label="On Click"
                 type="submit"
-                value={"Make Your Reservatio"}
+                value={"Make Your Reservation"}
               />
             </div>
           </fieldset>
